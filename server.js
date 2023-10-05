@@ -1,5 +1,6 @@
 const WebSocket = require('ws');
-const server = new WebSocket.Server({ port: 8080 });
+const PORT = process.env.PORT || 8080;
+const server = new WebSocket.Server({ port: PORT });
 
 const clients = new Set();
 
@@ -9,8 +10,6 @@ server.on('connection', (ws) => {
 
   ws.on('message', (message) => {
     messageQueue.push(message.toString());
-    // when a message is received, broadcast it to all clients
-    // Call processMessageQueue every 100 milliseconds (adjust the interval as needed)
     setInterval(processMessageQueue, 2000);
   });
 
