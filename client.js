@@ -11,7 +11,8 @@ const rl = readline.createInterface({
 const client = new WebSocket(`ws://localhost:${PORT}`);
 let username = '';
 
-client.addEventListener('open', () => { // Change 'socket' to 'client' here
+client.addEventListener('open', () => {
+  // Change 'socket' to 'client' here
   console.log('Connected to chat server.');
 
   rl.question('Enter your username: ', (enteredUsername) => {
@@ -21,12 +22,15 @@ client.addEventListener('open', () => { // Change 'socket' to 'client' here
 
     rl.on('line', (input) => {
       // send message to server with the username
-      client.send(JSON.stringify({ type: 'message', username, message: input }));
+      client.send(
+        JSON.stringify({ type: 'message', username, message: input })
+      );
     });
   });
 });
 
-client.addEventListener('message', (event) => { // Change 'socket' to 'client' here
+client.addEventListener('message', (event) => {
+  // Change 'socket' to 'client' here
   const data = JSON.parse(event.data);
   if (data.type === 'message') {
     displayMessage(data.username, data.message);
