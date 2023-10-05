@@ -1,0 +1,19 @@
+{
+  "name": "chismis",
+  "version": "1.0.0",
+  "description": "Chismis is a real-time messaging platform that allows users to engage in text-based conversations in a seamless and interactive manner.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest  --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-fellows-mini-projects/chismis.git"
+  },
+  "author": "Sydney Pagalan and Joshua Shea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/code-fellows-mini-projects/chismis/issues"
+  },
+  "homepage": "https://github.com/code-fellows-mini-projects/chismis#readme"
+}
