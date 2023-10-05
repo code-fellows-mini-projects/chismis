@@ -4,6 +4,7 @@
   "description": "Chismis is a real-time messaging platform that allows users to engage in text-based conversations in a seamless and interactive manner.",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "jest  --verbose --coverage"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/code-fellows-mini-projects/chismis/issues"
   },
-  "homepage": "https://github.com/code-fellows-mini-projects/chismis#readme"
+  "homepage": "https://github.com/code-fellows-mini-projects/chismis#readme",
+  "dependencies": {
+    "ws": "^8.14.2"
+  }
 }

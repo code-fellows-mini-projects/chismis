@@ -6,7 +6,7 @@ Chismis(Gossip in Tagalog) is a real-time messaging platform that allows users t
 
 ## UML
 
-![UML]()
+![UML](chat-app-uml.png)
 
 ## Installation
 
@@ -14,7 +14,7 @@ Chismis(Gossip in Tagalog) is a real-time messaging platform that allows users t
 
 Create .env file, set PORT
 
-`PORT=3002`
+`PORT=8080`
 
 ## Contributors
 
