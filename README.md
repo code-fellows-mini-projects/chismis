@@ -20,3 +20,7 @@ Create .env file, set PORT
 
 Sydney Pagalan
 Joshua Shea
+
+## Resources
+
+- ChatGPT
