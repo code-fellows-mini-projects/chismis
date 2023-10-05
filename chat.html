@@ -27,24 +27,28 @@
 
         socket.addEventListener('open', (event) => {
             console.log('Connected to chat server.');
+            const username = prompt('Enter your username:');
+            socket.send(JSON.stringify({ type: 'username', username }));
         });
 
         socket.addEventListener('message', (event) => {
-            const message = event.data;
-            displayMessage(message);
+            const data = JSON.parse(event.data);
+            if (data.type === 'message') {
+                displayMessage(data.username, data.message);            
+            }
         });
 
         sendButton.addEventListener('click', () => {
             const message = messageInput.value;
             if (message.trim() !== '') {
-                socket.send(message);
+                socket.send(JSON.stringify({ type: 'message', message }));
                 messageInput.value = '';
             }
         });
 
-        function displayMessage(message) {
+        function displayMessage(username, message) {            
             const messageElement = document.createElement('div');
-            messageElement.textContent = message;
+            messageElement.textContent = `[${username}]: ${message}`;
             chatContainer.appendChild(messageElement);
 
             chatContainer.scrollTop = chatContainer.scrollHeight;

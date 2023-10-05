@@ -11,7 +11,6 @@ server.on('connection', (ws) => {
 
   ws.on('message', (message) => {
     messageQueue.push(message.toString());
-    setInterval(processMessageQueue, 2000);
   });
 
   ws.on('close', () => {
@@ -21,13 +20,15 @@ server.on('connection', (ws) => {
 });
 
 const messageQueue = [];
+setInterval(processMessageQueue, 2000);
+
 function processMessageQueue(ws) {
   while (messageQueue.length > 0) {
     const message = messageQueue.shift(); // Get and remove the first message in the queue
 
     // Broadcast the message to all connected clients
     clients.forEach((client) => {
-      if (client !== ws && client.readyState === WebSocket.OPEN) {
+      if (client.readyState === WebSocket.OPEN) {
         console.log(message);
         client.send(message);
       }
