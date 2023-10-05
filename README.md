@@ -6,6 +6,10 @@ Chismis(Gossip in Tagalog) is a real-time messaging platform that allows users t
 
 ## UML
 
+Actual:
+![UML]()
+
+Old:
 ![UML](chat-app-uml.png)
 
 ## Installation
